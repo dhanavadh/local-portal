@@ -1,112 +1,130 @@
-import Image from "next/image";
+'use client'
+const FTTSenderP = () => {
+  const newWindow = window.open(
+    "https://fttsenderp.web.app",
+    "_blank",
+    "width=300,height=300"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+const GitHub = () => {
+  const newWindow = window.open(
+    "https://github.com",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+const Notion = () => {
+  const newWindow = window.open(
+    "https://www.notion.so",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+const Trello = () => {
+  const newWindow = window.open(
+    "http://trello.com",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+const Live = () => {
+  const newWindow = window.open(
+    "http://outlook.live.com/",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+const Office = () => {
+  const newWindow = window.open(
+    "http://outlook.office.com/mail/",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+
+import Clock from 'react-live-clock';
+import './styles.css';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <main className="flex flex-col min-h-screen items-center justify-between">   
+      <div className="relative flex place-items-center">
+        <div className="flex flex-row mt-5 text-2xl bg-green-700 border-2 text-white border-green-700">
+          <div className="flex-auto px-7 py-2">
+            注意
+          </div>
+          <div className="flex-auto w-128 py-2 bg-white text-green-700">
+            <div class="relative flex overflow-x-hidden">
+              <div class="animate-marquee whitespace-nowrap">
+                <span class="mx-4">内部使用のみ</span>                           
+                <span class="mx-4">INTERNAL USE ONLY</span>                           
+              </div>
+              <div class="absolute top-0 animate-marquee2 whitespace-nowrap">
+                <span class="mx-4">内部使用のみ</span>                             
+                <span class="mx-4">INTERNAL USE ONLY</span>                             
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>      
+      <div className="relative flex flex-col place-items-center">
+        <div className='flex text-4xl mb-1'>バンコク : 現在時刻</div>
+        <div className="flex text-7xl mb-2">
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'Asia/Bangkok'} />          
+        </div>        
+        <div className="flex-col m-2 ">
+          <a 
+            href=""
+            onClick={FTTSenderP}                      
+            className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">            
+            <div className="text-xl">FTTSenderP</div>
+            <div className="text-md">assign your projects here</div>
           </a>
+          <a onClick={GitHub} className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
+            <div className="text-xl">GitHub</div>
+            <div className="text-md">push/pull more repos here</div>
+          </a>          
+          <a onClick={Notion} className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
+            <div className="text-xl">Notion</div>
+            <div className="text-md">see your project plans here</div>
+          </a>
+          <a onClick={Trello} className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
+            <div className="text-xl">Trello</div>
+            <div className="text-md">manage Tasks via Trello</div>
+          </a>
+          <div className="flex flex-row">
+            <a onClick={Live} className="flex flex-col bg-white my-2 mr-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
+              <div className="text-xl">Outlook.live</div>
+              <div className="text-md">個人用</div>
+            </a>
+            <a onClick={Office} className="flex flex-col bg-white my-2 ml-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
+              <div className="text-xl">Outlook.office</div>
+              <div className="text-md">ビジネス</div>
+            </a>
+          </div>
+          
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="relative flex place-items-center mb-5 text-lg">
+        個人用・Dhanavadh Saito
       </div>
     </main>
   );
