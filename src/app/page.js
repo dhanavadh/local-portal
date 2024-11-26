@@ -60,6 +60,18 @@ const Office = () => {
   }
 }
 
+const Jira = () => {
+  const newWindow = window.open(
+    "https://dhanav.atlassian.net/jira/core/projects/AK/board",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+
+
 import Clock from 'react-live-clock';
 import './styles.css';
 
@@ -69,33 +81,26 @@ export default function Home() {
       <div className="relative flex place-items-center">
         <div className="flex flex-row mt-5 text-2xl bg-green-700 border-2 text-white border-green-700">
           <div className="flex-auto px-7 py-2">
-            注意
+            Alert
           </div>
           <div className="flex-auto w-128 py-2 bg-white text-green-700">
             <div class="relative flex overflow-x-hidden">
-              <div class="animate-marquee whitespace-nowrap">
-                <span class="mx-4">内部使用のみ</span>                           
-                <span class="mx-4">INTERNAL USE ONLY</span>                           
-              </div>
-              <div class="absolute top-0 animate-marquee2 whitespace-nowrap">
-                <span class="mx-4">内部使用のみ</span>                             
-                <span class="mx-4">INTERNAL USE ONLY</span>                             
-              </div>
+              <div><p className='mx-4'>Active - Internal Use</p></div>
             </div>            
           </div>
         </div>
       </div>      
       <div className="relative flex flex-col place-items-center">
-        <div className='flex text-4xl mb-1'>バンコク : 現在時刻</div>
+        <div className='flex text-4xl mb-1'>Bangkok : Current time</div>
         <div className="flex text-7xl mb-2">
           <Clock format={'HH:mm:ss'} ticking={true} timezone={'Asia/Bangkok'} />          
         </div>        
         <div className="flex-col m-2 ">
           <a 
             href=""
-            onClick={FTTSenderP}                      
+            onClick={Jira}                      
             className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">            
-            <div className="text-xl">FTTSenderP</div>
+            <div className="text-xl">Jira</div>
             <div className="text-md">assign your projects here</div>
           </a>
           <a onClick={GitHub} className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
@@ -124,7 +129,7 @@ export default function Home() {
         </div>
       </div>
       <div className="relative flex place-items-center mb-5 text-lg">
-        個人用・Dhanavadh Saito
+        <a href='https://dhanav.me/' target='_blank' className='hover:underline underline-thickness-1'>Dhanav.me</a>
       </div>
     </main>
   );
