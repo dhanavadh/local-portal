@@ -59,10 +59,29 @@ const Office = () => {
     newWindow.focus();
   }
 }
-
+const Office365 = () => {
+  const newWindow = window.open(
+    "http://office.com",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
 const Jira = () => {
   const newWindow = window.open(
     "https://dhanav.atlassian.net/jira/core/projects/AK/board",
+    "_blank",
+    "width=1500,height=1000"
+  );
+  if (newWindow) {
+    newWindow.focus();
+  }
+}
+const Calendar = () => {
+  const newWindow = window.open(
+    "https://calendar.google.com/calendar/u/0/r",
     "_blank",
     "width=1500,height=1000"
   );
@@ -111,6 +130,14 @@ export default function Home() {
             <div className="text-xl">Notion</div>
             <div className="text-md">see your project plans here</div>
           </a>
+          <a onClick={Office365} className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
+            <div className="text-xl">Office365</div>
+            <div className="text-md">manage Tasks via Trello</div>
+          </a>
+          <a onClick={Calendar} className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
+            <div className="text-xl">Calendar</div>
+            <div className="text-md">Google Calendar</div>
+          </a>
           <a onClick={Trello} className="flex flex-col bg-white my-2 px-4 py-2 text-sm font-medium border-2 btn-active underline-thickness-1 hover:underline text-green-700 border-green-700 hover:bg-green-700 hover:text-[#F2F2F2] cursor-pointer transition-colors duration-300">
             <div className="text-xl">Trello</div>
             <div className="text-md">manage Tasks via Trello</div>
@@ -125,7 +152,6 @@ export default function Home() {
               <div className="text-md">ビジネス</div>
             </a>
           </div>
-          
         </div>
       </div>
       <div className="relative flex place-items-center mb-5 text-lg">
